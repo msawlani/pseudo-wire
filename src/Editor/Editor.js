@@ -11,10 +11,8 @@ const CodeEditor = ({ onChange, language, code, theme }) => {
   };
 
   return (
-    <div className="landingPage">
+    <div className="editor">
       <Editor
-        height="85vh"
-        width={`100%`}
         language={language || "javascript"}
         value={value}
         theme={theme}
