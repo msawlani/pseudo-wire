@@ -2,7 +2,7 @@ import "./Editor.css";
 import React, { useEffect, useState } from "react";
 import Editor from "@monaco-editor/react";
 
-const CodeEditor = ({ onChange, language, code, theme }) => {
+const CodeEditor = ({ onChange, language, code, theme, readOnly, content }) => {
   const [value, setValue] = useState(code || "");
 
   const handleEditorChange = (value) => {
@@ -13,10 +13,11 @@ const CodeEditor = ({ onChange, language, code, theme }) => {
   return (
     <div className="editor">
       <Editor
+        options={{ readOnly: readOnly || false }}
         language={language || "javascript"}
         value={value}
         theme={theme}
-        defaultValue={"// Some Content"}
+        defaultValue={content || "// Some Content"}
         onChange={handleEditorChange}
       />
     </div>

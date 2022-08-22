@@ -3,7 +3,11 @@
   overflow: auto;
   height: 100vh;
 }
-
+.editor {
+  height: 40vh;
+  width: 70%;
+  margin: auto;
+}
 .title {
   color: #02f0ff;
 }
