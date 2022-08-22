@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CodeEditor from "../../Editor/Editor";
+import CodeEditor from "../../Shared/Editor/Editor";
 
 import "./Home.css";
 
