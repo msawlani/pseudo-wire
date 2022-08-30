@@ -7,11 +7,16 @@ import {
   NavbarToggler,
   Collapse,
   Button,
+  NavDropdown,
   Container,
 } from "react-bootstrap";
+import { Dropdown } from "reactstrap";
 import "./Header.css";
+import Code from "../../Shared/Data/Code.json";
 
 const Header = () => {
+  let language = Code.Languages.map((data) => data);
+  console.log(language.title);
   return (
     <Navbar className="Navbar">
       <Container>
@@ -22,9 +27,11 @@ const Header = () => {
           <NavLink href="/" className="link">
             Home
           </NavLink>
-          <NavLink href="/learn" className="link">
-            Learn
-          </NavLink>
+          <NavDropdown title="Learn" id="link">
+            {Code.Languages.map((data) => (
+              <NavLink href={`/${data.title}`}>{data.title}</NavLink>
+            ))}
+          </NavDropdown>
           <NavLink href="/about" className="link">
             About
           </NavLink>

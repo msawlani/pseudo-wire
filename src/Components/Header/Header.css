@@ -1,8 +1,15 @@
-.Navbar{
-    background-color: #114DC2;
-
+.Navbar {
+  background-color: #114dc2;
 }
 
-.link{
-    color: #1DD0B0 !important;
+.link {
+  color: #1dd0b0 !important;
+}
+
+.link:active {
+  color: #114dc2 !important;
+}
+
+#link {
+  color: #1dd0b0 !important;
 }
