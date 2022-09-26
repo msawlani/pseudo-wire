@@ -8,19 +8,18 @@ import LearnDetails from "./Components/Learn/LearnDetails";
 import Code from "./Shared/Data/Code.json";
 
 function App() {
-  return (
+
+  return ( 
     <BrowserRouter>
       <div className="app">
         <Header />
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          {Code.Languages.map((data) => (
             <Route
-              path={`/:${data.title}`}
-              element={<LearnDetails language={data.title} />}
+              exact path="/:link_id"
+              element={<LearnDetails/>}
             />
-          ))}
         </Routes>
       </div>
     </BrowserRouter>
