@@ -1,22 +1,19 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const LearnDetails = (props) => {
+  let { link_id } = useParams();
+
+  const item = useSelector((state) => state.links[link_id]);
+
+  console.table(item);
+
   return (
     <div>
-      <h1>{props.link}</h1>
+      <h1>{item.language}</h1>
     </div>
   );
 };
 
-const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
-  console.log(state)
-  let id = ownProps.match.params.link_id
-  return {
-    link: state.links.find(link => link.id === id)
-  }
-
-}
-
-export default connect(mapStateToProps)(LearnDetails);
+export default LearnDetails;

@@ -12,13 +12,9 @@ import {
 } from "react-bootstrap";
 import { Dropdown } from "reactstrap";
 import "./Header.css";
-import Code from "../../Shared/Data/Code.json";
 import { connect } from "react-redux";
 
-
 const Header = (props) => {
-  let language = Code.Languages.map((data) => data);
-  console.log(language.title);
   console.log(props.links);
   return (
     <Navbar className="Navbar">
@@ -48,8 +44,8 @@ const Header = (props) => {
 };
 const mapStateToProps = (state) => {
   return {
-  links: state.links
-}
-}
+    links: state.links,
+  };
+};
 
 export default connect(mapStateToProps)(Header);
