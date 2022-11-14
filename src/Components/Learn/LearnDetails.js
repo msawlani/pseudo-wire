@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CodeEditor from "../../Shared/Editor/Editor";
+import SideNav from "../SideNav/sideNav";
 
 const LearnDetails = (props) => {
   let { link_id } = useParams();
@@ -12,6 +13,7 @@ const LearnDetails = (props) => {
 
   return (
     <div>
+      <SideNav />
       <div>
         <h1 className="text-white">{item.language}</h1>
       </div>
